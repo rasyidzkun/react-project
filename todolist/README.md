@@ -10,7 +10,7 @@
 
 ## Change Directory
 
-`cd todolist/`
+`cd react-project/todolist`
 
 ## Start Yarn
 

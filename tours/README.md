@@ -10,7 +10,7 @@
 
 ## Change Directory
 
-`cd tours/`
+`cd react-project/tours`
 
 ## Start Yarn
 
