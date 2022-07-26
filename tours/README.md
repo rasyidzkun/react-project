@@ -10,7 +10,7 @@
 
 ## Change Directory
 
-`cd todolist/`
+`cd tours/`
 
 ## Start Yarn
 
