@@ -4,7 +4,9 @@ function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=07ddcb053891151480ff8ff53557a853&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}${
+    import.meta.env.VITE_KEY
+  }`;
 
   const inputLocationHandler = (event) => {
     setLocation(event.target.value.trim());
@@ -16,7 +18,6 @@ function App() {
       const result = await response.json();
 
       setData(result);
-      console.log(result);
 
       setLocation("");
     }
@@ -38,9 +39,16 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>
-              {data.name}, {data.sys ? data.sys.country : ""}
-            </p>
+            {data.name ? (
+              <p>
+                {data.name}, {data.sys ? data.sys.country : ""}
+              </p>
+            ) : (
+              <div className="location">
+                <p>{data.cod}</p>
+                <p>{data.message}</p>
+              </div>
+            )}
           </div>
           <div className="temp">
             {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
