@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [data, setData] = useState({});
@@ -7,6 +7,7 @@ function App() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}${
     import.meta.env.VITE_KEY
   }`;
+  // change env with your own api key
 
   const inputLocationHandler = (event) => {
     setLocation(event.target.value.trim());

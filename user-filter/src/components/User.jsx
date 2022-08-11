@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getData from "../api/getData";
+import getData from "../api/index";
 import "./user.css";
 
 function User() {
